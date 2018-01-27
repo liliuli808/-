@@ -27,6 +27,19 @@ class Order extends Controller
         return $this->fetch();
     }
 
+<<<<<<< HEAD
+=======
+    //编辑角色权限
+    public function role_access()
+    {
+        $access = Db::name('access')->select();
+        $sons_rule = $this->getSubTree($access);
+        var_dump($sons_rule);die;
+        $main_rule =  Db::name('access')->where('pid=0')->select();
+        $this->assign('access',$access);
+        $this->display();
+    }
+>>>>>>> origin/master
 
     /**
      * 获取子孙树
@@ -96,6 +109,7 @@ class Order extends Controller
           }
     }
 
+<<<<<<< HEAD
 
     public function role_access_manager()
     {
@@ -132,4 +146,6 @@ class Order extends Controller
             $this->error('修改失败');
         }
     }
+=======
+>>>>>>> origin/master
 }
